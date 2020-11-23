@@ -11,9 +11,9 @@
         var getUser = function(){
             VK.api("users.get", {}, function (data) {
                 var div = document.createElement('div');
-                div.innerHTML = "Hello World";
+                div.innerHTML = 'Твой id: ' + data.response[0].id;
                 document.body.appendChild(div);
-                alert('Твой id: ' + data.response[0].id);
+                
             });
         }
         VK.init(function() {
