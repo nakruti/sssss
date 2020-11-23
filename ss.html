@@ -10,6 +10,9 @@
     <script type="text/javascript">
         var getUser = function(){
             VK.api("users.get", {}, function (data) {
+                var div = document.createElement('div');
+                div.innerHTML = "Hello World";
+                document.body.appendChild(div);
                 alert('Твой id: ' + data.response[0].id);
             });
         }
