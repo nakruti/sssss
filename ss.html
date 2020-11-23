@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+    <script type="text/javascript">
+        var getUser = function(){
+            VK.api("user.get", {}, function (data) {
+            alert(data.response[0].id);
+            });
+        }
+        VK.init(function() {
+           console.log('yes');
+           getUser();
+        }, function() {
+           console.log('no');
+      }, '5.126');
+      </script>
+</body>
+</html>
