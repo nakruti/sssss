@@ -10,7 +10,7 @@
     <script type="text/javascript">
         var getUser = function(){
             VK.api("users.get", {}, function (data) {
-                alert(data);
+                alert(data.response[0].id);
             });
         }
         VK.init(function() {
