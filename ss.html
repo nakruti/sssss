@@ -8,10 +8,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
 </head>
+<style>
+body {
+    
+    text-align: center;
+    background-color: rgb(17, 19, 31);
+    -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none; 
+}
+#col{
+    color: #1FA665;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+.click{
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%;
+    background: #1FA665;
+    color: #146A41;
+}
+.click:active{
+    width: 240px; 
+    height: 240px;
+    border-radius: 50%;
+    background: #1FA665;
+}
+</style>
 
 <body>
-    <script type="text/javascript">
-    window.location.replace('http:///f0482823.xsph.ru/пердолька/ssa.php');
+    <center>
+        <br><br><br>
+        <span id="col"><b>0 ЕН</b></span><br><br><br><br><br><br>
+        <div class="click" onclick="clic()"></div><br><br><br>
+        <span id="col"><b>Хороший кликер это то,<br> из чего не делают<br> валюту</b></span>
+    </center>
+    <script>
+        var score = 0;
+        function clic() {
+            score++;
+            console.log(score);
+            document.getElementById('col').innerHTML = '<span id="col"><b>'+score+' ЕН</b></span>';
+        }
     </script>
-        </body>
+    <script type="text/javascript">
+        var getUser = function(){
+            VK.api("users.get", {}, function (data) {
+                var div = document.createElement('div');
+                div.innerHTML = 'Твой id: ' + data.response[0].id;
+                document.body.appendChild(div);
+                var id = data.response[0].id;
+                var div = document.createElement('div');
+                div.innerHTML = '<br><span id="col"><b>'+data.response[0].first_name+' ЕН</b></span>' ;
+                document.body.appendChild(div);
+                
+            });
+        }
+        VK.init(function() {
+           console.log('yes');
+           getUser();
+        }, function() {
+           console.log('no');
+      }, '5.126');
+      </script>
+</body>
 </html>
