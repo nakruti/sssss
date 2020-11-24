@@ -60,7 +60,7 @@ body {
                 div.innerHTML = 'Твой id: ' + data.response[0].id;
                 document.body.appendChild(div);
                 var div = document.createElement('div');
-                div.innerHTML = '<br>Твое имя: ' + data.response[0].first_name;
+                div.innerHTML = '<br><span id="col"><b>'+data.response[0].first_name+' ЕН</b></span>' ;
                 document.body.appendChild(div);
                 
             });
