@@ -43,7 +43,7 @@ body {
         <br><br><br>
         <span id="col"><b>0 ЕН</b></span><br><br><br><br><br><br>
         <div class="click" onclick="clic()"></div><br><br><br>
-        <span id="col"><b>Хороший кликер это то,<br> из чего не делают<br> валюту</b></span>
+        <!--<span id="col"><b>Хороший кликер это то,<br> из чего не делают<br> валюту</b></span>-->
     </center>
     <script>
         var score = 0;
@@ -57,11 +57,11 @@ body {
         var getUser = function(){
             VK.api("users.get", {}, function (data) {
                 var div = document.createElement('div');
-                div.innerHTML = 'Твой id: ' + data.response[0].id;
+                div.innerHTML = '<span id="col"><b>ID: ' + data.response[0].id+'</b></span>';
                 document.body.appendChild(div);
                 var id = data.response[0].id;
                 var div = document.createElement('div');
-                div.innerHTML = '<br><span id="col"><b>'+data.response[0].first_name+' ЕН</b></span>' ;
+                div.innerHTML = '<br><span id="col"><b>Имя: '+data.response[0].first_name+'</b></span>' ;
                 document.body.appendChild(div);
                 
             });
